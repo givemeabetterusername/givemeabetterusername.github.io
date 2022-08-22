@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Much of this is based off of the "Slideshow" tutorial on W3Schools. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin-top:50px;}
+.mySlides {display: flex; margin-left: -20px;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  margin-right: -80px;
+  color: tan;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 3px 3px 3px 3px;
+  user-select: none;
+}
+
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  right: 0;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  margin-right: -80px;
+  color: tan;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 3px 3px 3px 3px;
+  user-select: none;
+}
+
+/*In the future, I plan to structure this so that the images automatically re-size themselves to fit the "TV"*/
+* {
+  background-image: url("https://cdn.discordapp.com/attachments/901719170541043756/1011137606379110410/individual_project_background_5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+/* From W3Schools: On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* From W3Schools: On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+<title> Personal Website </title>
+</head> 
+<body>
+<!-- These images are just some backgrounds for cards I made on Canva. -->
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <img src= "https://cdn.discordapp.com/attachments/901719170541043756/1011134146778763284/individual_project_background_2.png" style="width:90%;">
+  
+</div>
+
+<div class="mySlides">
+  <img src="https://cdn.discordapp.com/attachments/901719170541043756/1011134147206586460/individual_project_background_3.png" style="width:90%;height:525px;">
+
+</div>
+
+<div class="mySlides">
+  <img src="https://cdn.discordapp.com/attachments/901719170541043756/1011134147688943646/individual_project_background_4.png" style="width:90%; height:525px">
+
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#9651</a>
+<a class="next" onclick="plusSlides(1)">&#9661</a>
+
+</div>
+<br>
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  slides[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+<!-- Future Ideas: -->
+<!-- +Add a quick TV fuzzy flash -->
+<!-- +Attempt to create a background with just CSS -->
+<!-- +Images Resize themselves to fit TV screen -->
+<!-- +Add more buttons on Remote that do other things -->
+<!-- Add more images -->
+</html> 
